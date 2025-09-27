@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import avatar from '../../imgs/avatar.png';
 
 const navLinks = [
@@ -71,7 +72,6 @@ export default function HomePage() {
 
                 <div className="profile-card lg:col-span-1 p-6 md:p-8 rounded-2xl shadow-2xl bg-dark-card border border-gray-700/50">
                     <h2 className="text-3xl font-bold mb-4"><span className="text-primary-orange">J</span>irawad</h2>
-                    
 
                     <div className="text-center space-y-2 mb-8">
                         <p className="text-lg font-medium">STU ID: 6652410033</p>
@@ -86,12 +86,14 @@ export default function HomePage() {
                         <a href="#" className="hover:text-primary-orange transition duration-300 transform hover:scale-110"><i className="fab fa-google text-xl"></i></a>
                     </div>
 
+
                     <button className="w-full py-3 rounded-xl bg-primary-orange text-black font-bold text-lg shadow-lg hover:shadow-primary-orange/50 transition duration-300 transform hover:scale-[1.02]">
                         HIRE ME !
                     </button>
                 </div>
 
                 <div className="main-content lg:col-span-2 p-6 md:p-8 rounded-2xl">
+                    
                     
                     <h1 className="text-4xl md:text-5xl font-extrabold leading-tight mb-10">
                         My <span className="text-primary-orange">Specializations</span>
@@ -119,6 +121,7 @@ export default function HomePage() {
                                 </p>
                             </div>
                         </div>
+
 
                         <div className="p-5 md:p-6 bg-dark-card rounded-xl border-l-4 border-primary-orange flex items-start space-x-4 shadow-xl">
                             <i className="fas fa-pencil-alt text-2xl text-primary-orange mt-1"></i>

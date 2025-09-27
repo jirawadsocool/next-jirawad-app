@@ -6,8 +6,8 @@ const navLinks = [
     { title: "About Me", icon: "fas fa-user", href: "/aboutme" },
     { title: "Resume/CV", icon: "fas fa-file-alt", href: "/eduexp" },
     { title: "Portfolio/Works", icon: "fas fa-briefcase", href: "/projects" },
-    { title: "Specializations", icon: "fas fa-comments", href: "/spec" },
     { title: "Services/Skills", icon: "fas fa-cogs", href: "/skills" },
+    { title: "Testimonials/Feedback", icon: "fas fa-comments", href: "#" },
     { title: "Contact", icon: "fas fa-envelope", href: "/contactme" },
 ];
 

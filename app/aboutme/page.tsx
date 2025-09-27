@@ -1,7 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import avatar from '../images/avatar.png';
-import Image from 'next/image';
+import avatar from '../imgs/avatar.png';
 
 const navLinks = [
     { title: "Home", icon: "fas fa-home", href: "/" },
@@ -100,6 +99,7 @@ export default function HomePage() {
 
                 <div className="main-content lg:col-span-2 p-6 md:p-8 rounded-2xl">
                     
+                    {/* Title: About Me */}
                     <h1 className="text-4xl md:text-5xl font-extrabold leading-tight mb-8">
                         About <span className="text-primary-orange">Me</span>
                     </h1>

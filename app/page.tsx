@@ -1,6 +1,4 @@
 import React from 'react';
-import Image from 'next/image';
-import avatar from '../images/avatar.png';
 import Link from 'next/link';
 
 const navLinks = [
@@ -8,8 +6,8 @@ const navLinks = [
     { title: "About Me", icon: "fas fa-user", href: "/aboutme" },
     { title: "Resume/CV", icon: "fas fa-file-alt", href: "/eduexp" },
     { title: "Portfolio/Works", icon: "fas fa-briefcase", href: "/projects" },
-    { title: "Specializations", icon: "fas fa-comments", href: "/spec" },
     { title: "Services/Skills", icon: "fas fa-cogs", href: "/skills" },
+    { title: "Testimonials/Feedback", icon: "fas fa-comments", href: "#" },
     { title: "Contact", icon: "fas fa-envelope", href: "/contactme" },
 ];
 
@@ -73,14 +71,6 @@ export default function HomePage() {
                 <div className="profile-card lg:col-span-1 p-6 md:p-8 rounded-2xl shadow-2xl bg-dark-card border border-gray-700/50">
                     <h2 className="text-3xl font-bold mb-4"><span className="text-primary-orange">J</span>irawad</h2>
                     
-                    <div className="mb-6 overflow-hidden rounded-2xl border-4 border-gray-700">
-                        <Image 
-                            src={avatar} 
-                            alt="Profile Avatar" 
-                            className="w-full h-auto object-cover"
-                            priority
-                        />
-                    </div>
 
                     <div className="text-center space-y-2 mb-8">
                         <p className="text-lg font-medium">STU ID: 6652410033</p>

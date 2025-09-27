@@ -1,6 +1,4 @@
 import React from 'react';
-import Image from 'next/image';
-import avatar from '../images/avatar.png';
 import Link from 'next/link';
 
 const navLinks = [
@@ -74,11 +72,10 @@ export default function HomePage() {
                     <h2 className="text-3xl font-bold mb-4"><span className="text-primary-orange">J</span>irawad</h2>
                     
                     <div className="mb-6 overflow-hidden rounded-2xl border-4 border-gray-700">
-                        <Image 
-                            src={avatar} 
+                        <img 
+                            src="/avatar.png" 
                             alt="Profile Avatar" 
                             className="w-full h-auto object-cover"
-                            priority
                         />
                     </div>
 
@@ -102,37 +99,30 @@ export default function HomePage() {
 
                 <div className="main-content lg:col-span-2 p-6 md:p-8 rounded-2xl">
                     
-                    <p className="text-lg font-medium mb-4">
-                        Lets Work <span className="text-primary-orange font-bold">Together !</span>
-                    </p>
-
-                    <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-6">
-                        Hi From Thailand<span className="text-primary-orange">Jirawad,</span>
-                        <br />
-                        Interactive Designer & Fullstack Web Developer
+                    <h1 className="text-4xl md:text-5xl font-extrabold leading-tight mb-10">
+                        Education & <span className="text-primary-orange">Experience</span>
                     </h1>
 
-                    <p className="text-gray-400 text-base md:text-lg mb-10 max-w-2xl">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto maxime tempora at neque a adipisci nulla voluptatem? Molitia, officiis, architecto earum voluptates obcaecati corrupti voluptatem.
-                    </p>
-
-                    <div className="flex space-x-12 md:space-x-16">
-                        
-                        <div>
-                            <p className="text-5xl md:text-6xl font-extrabold text-primary-orange">3+</p>
-                            <p className="text-sm md:text-base text-gray-400 mt-1">
-                                Years of Experience
-                            </p>
-                        </div>
-
-                        <div>
-                            <p className="text-5xl md:text-6xl font-extrabold text-primary-orange">10+</p>
-                            <p className="text-sm md:text-base text-gray-400 mt-1">
-                                Projects Completed
-                            </p>
-                        </div>
-
+                    <div className="mb-8 border-l-4 border-primary-orange pl-4">
+                        <p className="text-gray-400 text-sm mb-1">2022 - Present</p>
+                        <h2 className="text-2xl font-bold">UI/UX Designer</h2>
+                        <p className="text-base text-gray-400 mb-2">Freelance</p>
+                        <h2 className="text-2xl font-bold">Fullstack Web Developer</h2>
+                        <p className="text-base text-gray-400">Freelance</p>
                     </div>
+
+                    <div className="mb-8 border-l-4 border-gray-700/50 pl-4">
+                        <p className="text-gray-400 text-sm mb-1">2022 - 2025</p>
+                        <h2 className="text-2xl font-bold">Bachelor Degree in Technology Digital and Innovation</h2>
+                        <p className="text-base text-gray-400">Southeast Asia University</p>
+                    </div>
+
+                    <div className="mb-8 border-l-4 border-gray-700/50 pl-4">
+                        <p className="text-gray-400 text-sm mb-1">2016 - 2021</p>
+                        <h2 className="text-2xl font-bold">High school</h2>
+                        <p className="text-base text-gray-400">Chanpadittaramwitayakom School</p>
+                    </div>
+
                 </div>
                 
             </div>
@@ -144,7 +134,7 @@ export default function HomePage() {
                     <Link 
                       key={index}
                       href={link.href} 
-                      className={`p-2 rounded-full hover:text-primary-orange transition duration-200 ${index === 0 ? 'sidebar-active' : 'hover:bg-gray-700'}`}
+                      className={`p-2 rounded-full hover:text-primary-orange transition duration-200 ${index === 2 ? 'sidebar-active' : 'hover:bg-gray-700'}`}
                       title={link.title}
                     >
                       <i className={`${link.icon} text-xl`}></i>

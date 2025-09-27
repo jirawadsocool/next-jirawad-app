@@ -1,6 +1,4 @@
 import React from 'react';
-import Image from 'next/image';
-import avatar from '../images/avatar.png';
 import Link from 'next/link';
 
 const navLinks = [
@@ -17,7 +15,50 @@ const PRIMARY_COLOR = '#FF5C00';
 const BACKGROUND_COLOR = '#1D1C1D';
 const CARD_BACKGROUND = '#1a1a1a';
 
+const SkillIcon = ({ icon, label, percentage }) => {
+    return (
+        <div className="flex flex-col items-center p-4">
+            <div className="relative w-24 h-24 mb-2">
+                <div className="w-full h-full rounded-full flex items-center justify-center border-2 border-gray-700 hover:border-primary-orange transition duration-300">
+                    <div className="text-6xl text-primary-orange opacity-80" aria-label={label}>
+                        {label === 'React' && (
+                            <i className="fab fa-react animate-spin-slow" style={{ animationDuration: '8s' }}></i>
+                        )}
+                        {label === 'Figma' && (
+                            <i className="fab fa-figma text-white"></i>
+                        )}
+                        {label === 'HTML/CSS' && (
+                            <i className="fas fa-code text-white"></i>
+                        )}
+                        {label === 'Next.js' && (
+                            <span className="font-extrabold text-white">N</span> 
+                        )}
+                        {label === 'Java Script' && (
+                            <i className="fab fa-js-square text-yellow-500"></i>
+                        )}
+                        {label === 'GitHub' && (
+                            <i className="fab fa-github text-white"></i>
+                        )}
+                    </div>
+                </div>
+            </div>
+            <p className="text-sm font-medium text-primary-orange mb-1">{percentage}%</p>
+            <p className="text-gray-300 text-base">{label}</p>
+        </div>
+    );
+};
+
 export default function HomePage() {
+    
+    const skills = [
+        { label: "React", percentage: 60, icon: "fab fa-react" },
+        { label: "Figma", percentage: 85, icon: "fab fa-figma" },
+        { label: "HTML/CSS", percentage: 80, icon: "fas fa-code" },
+        { label: "Next.js", percentage: 80, icon: "N" },
+        { label: "Java Script", percentage: 60, icon: "fab fa-js-square" },
+        { label: "GitHub", percentage: 90, icon: "fab fa-github" },
+    ];
+
   return (
     <>
         <title>Jirawad - Interactive Designer</title>
@@ -47,6 +88,19 @@ export default function HomePage() {
                 color: ${PRIMARY_COLOR};
                 background-color: #2a2a2a;
             }
+            /* Custom focus style for inputs */
+            .input-field:focus {
+                outline: none;
+                border-color: ${PRIMARY_COLOR};
+            }
+            /* Custom animation for React icon */
+            @keyframes spin-slow {
+                from { transform: rotate(0deg); }
+                to { transform: rotate(360deg); }
+            }
+            .animate-spin-slow {
+                animation: spin-slow 8s linear infinite;
+            }
           `}
         </style>
         
@@ -74,11 +128,10 @@ export default function HomePage() {
                     <h2 className="text-3xl font-bold mb-4"><span className="text-primary-orange">J</span>irawad</h2>
                     
                     <div className="mb-6 overflow-hidden rounded-2xl border-4 border-gray-700">
-                        <Image 
-                            src={avatar} 
+                        <img 
+                            src="/avatar.png" 
                             alt="Profile Avatar" 
                             className="w-full h-auto object-cover"
-                            priority
                         />
                     </div>
 
@@ -102,36 +155,19 @@ export default function HomePage() {
 
                 <div className="main-content lg:col-span-2 p-6 md:p-8 rounded-2xl">
                     
-                    <p className="text-lg font-medium mb-4">
-                        Lets Work <span className="text-primary-orange font-bold">Together !</span>
-                    </p>
-
-                    <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-6">
-                        Hi From Thailand<span className="text-primary-orange">Jirawad,</span>
-                        <br />
-                        Interactive Designer & Fullstack Web Developer
+                    <h1 className="text-4xl md:text-5xl font-extrabold leading-tight mb-8">
+                        My <span className="text-primary-orange">Skills</span>
                     </h1>
-
-                    <p className="text-gray-400 text-base md:text-lg mb-10 max-w-2xl">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto maxime tempora at neque a adipisci nulla voluptatem? Molitia, officiis, architecto earum voluptates obcaecati corrupti voluptatem.
-                    </p>
-
-                    <div className="flex space-x-12 md:space-x-16">
-                        
-                        <div>
-                            <p className="text-5xl md:text-6xl font-extrabold text-primary-orange">3+</p>
-                            <p className="text-sm md:text-base text-gray-400 mt-1">
-                                Years of Experience
-                            </p>
-                        </div>
-
-                        <div>
-                            <p className="text-5xl md:text-6xl font-extrabold text-primary-orange">10+</p>
-                            <p className="text-sm md:text-base text-gray-400 mt-1">
-                                Projects Completed
-                            </p>
-                        </div>
-
+                    
+                    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-5 gap-6 md:gap-8">
+                        {skills.map((skill, index) => (
+                            <SkillIcon 
+                                key={index}
+                                label={skill.label}
+                                percentage={skill.percentage}
+                                icon={skill.icon}
+                            />
+                        ))}
                     </div>
                 </div>
                 
@@ -144,7 +180,7 @@ export default function HomePage() {
                     <Link 
                       key={index}
                       href={link.href} 
-                      className={`p-2 rounded-full hover:text-primary-orange transition duration-200 ${index === 0 ? 'sidebar-active' : 'hover:bg-gray-700'}`}
+                      className={`p-2 rounded-full hover:text-primary-orange transition duration-200 ${index === 5 ? 'sidebar-active' : 'hover:bg-gray-700'}`}
                       title={link.title}
                     >
                       <i className={`${link.icon} text-xl`}></i>

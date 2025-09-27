@@ -1,7 +1,7 @@
 import React from 'react';
-import Image from 'next/image';
-import avatar from '../images/avatar.png';
 import Link from 'next/link';
+import Image from 'next/image';
+import avatar from '../../images/avatar.png';
 
 const navLinks = [
     { title: "Home", icon: "fas fa-home", href: "/" },
@@ -102,37 +102,45 @@ export default function HomePage() {
 
                 <div className="main-content lg:col-span-2 p-6 md:p-8 rounded-2xl">
                     
-                    <p className="text-lg font-medium mb-4">
-                        Lets Work <span className="text-primary-orange font-bold">Together !</span>
-                    </p>
-
-                    <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-6">
-                        Hi From Thailand<span className="text-primary-orange">Jirawad,</span>
-                        <br />
-                        Interactive Designer & Fullstack Web Developer
+                    <h1 className="text-4xl md:text-5xl font-extrabold leading-tight mb-10">
+                        My <span className="text-primary-orange">Specializations</span>
                     </h1>
 
-                    <p className="text-gray-400 text-base md:text-lg mb-10 max-w-2xl">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto maxime tempora at neque a adipisci nulla voluptatem? Molitia, officiis, architecto earum voluptates obcaecati corrupti voluptatem.
-                    </p>
-
-                    <div className="flex space-x-12 md:space-x-16">
-                        
-                        <div>
-                            <p className="text-5xl md:text-6xl font-extrabold text-primary-orange">3+</p>
-                            <p className="text-sm md:text-base text-gray-400 mt-1">
-                                Years of Experience
-                            </p>
+                    <div className="space-y-6">
+                        <div className="p-5 md:p-6 bg-dark-card rounded-xl border-l-4 border-primary-orange flex items-start space-x-4 shadow-xl">
+                            <i className="fas fa-code text-2xl text-primary-orange mt-1"></i>
+                            <div>
+                                <h2 className="text-xl font-bold mb-2">Front-end developer</h2>
+                                <p className="text-gray-400">
+                                    Front-end is where I weave code and creativity to shape 
+                                    captivating and user-centric digital experiences.
+                                </p>
+                            </div>
                         </div>
 
-                        <div>
-                            <p className="text-5xl md:text-6xl font-extrabold text-primary-orange">10+</p>
-                            <p className="text-sm md:text-base text-gray-400 mt-1">
-                                Projects Completed
-                            </p>
+                        <div className="p-5 md:p-6 bg-dark-card rounded-xl border-l-4 border-primary-orange flex items-start space-x-4 shadow-xl">
+                            <i className="fas fa-globe text-2xl text-primary-orange mt-1"></i>
+                            <div>
+                                <h2 className="text-xl font-bold mb-2">UI/UX Designer</h2>
+                                <p className="text-gray-400">
+                                    UI/UX design is my palette for blending art and user psychology 
+                                    into seamless and delightful interactions.
+                                </p>
+                            </div>
                         </div>
 
+                        <div className="p-5 md:p-6 bg-dark-card rounded-xl border-l-4 border-primary-orange flex items-start space-x-4 shadow-xl">
+                            <i className="fas fa-pencil-alt text-2xl text-primary-orange mt-1"></i>
+                            <div>
+                                <h2 className="text-xl font-bold mb-2">Graphic designer</h2>
+                                <p className="text-gray-400">
+                                    As a graphic designer, I transform ideas into visually striking 
+                                    and impactful designs.
+                                </p>
+                            </div>
+                        </div>
                     </div>
+
                 </div>
                 
             </div>
@@ -144,7 +152,7 @@ export default function HomePage() {
                     <Link 
                       key={index}
                       href={link.href} 
-                      className={`p-2 rounded-full hover:text-primary-orange transition duration-200 ${index === 0 ? 'sidebar-active' : 'hover:bg-gray-700'}`}
+                      className={`p-2 rounded-full hover:text-primary-orange transition duration-200 ${index === 4 ? 'sidebar-active' : 'hover:bg-gray-700'}`}
                       title={link.title}
                     >
                       <i className={`${link.icon} text-xl`}></i>

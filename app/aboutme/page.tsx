@@ -1,7 +1,7 @@
 import React from 'react';
-import Image from 'next/image';
-import avatar from '../images/avatar.png';
 import Link from 'next/link';
+import avatar from '../images/avatar.png';
+import Image from 'next/image';
 
 const navLinks = [
     { title: "Home", icon: "fas fa-home", href: "/" },
@@ -69,16 +69,14 @@ export default function HomePage() {
 
         <div className="main-container w-full max-w-7xl">
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-
                 <div className="profile-card lg:col-span-1 p-6 md:p-8 rounded-2xl shadow-2xl bg-dark-card border border-gray-700/50">
                     <h2 className="text-3xl font-bold mb-4"><span className="text-primary-orange">J</span>irawad</h2>
                     
                     <div className="mb-6 overflow-hidden rounded-2xl border-4 border-gray-700">
-                        <Image 
-                            src={avatar} 
+                        <img 
+                            src="/avatar.png" 
                             alt="Profile Avatar" 
                             className="w-full h-auto object-cover"
-                            priority
                         />
                     </div>
 
@@ -102,37 +100,18 @@ export default function HomePage() {
 
                 <div className="main-content lg:col-span-2 p-6 md:p-8 rounded-2xl">
                     
-                    <p className="text-lg font-medium mb-4">
-                        Lets Work <span className="text-primary-orange font-bold">Together !</span>
-                    </p>
-
-                    <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-6">
-                        Hi From Thailand<span className="text-primary-orange">Jirawad,</span>
-                        <br />
-                        Interactive Designer & Fullstack Web Developer
+                    <h1 className="text-4xl md:text-5xl font-extrabold leading-tight mb-8">
+                        About <span className="text-primary-orange">Me</span>
                     </h1>
 
-                    <p className="text-gray-400 text-base md:text-lg mb-10 max-w-2xl">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto maxime tempora at neque a adipisci nulla voluptatem? Molitia, officiis, architecto earum voluptates obcaecati corrupti voluptatem.
+                    <h2 className="text-2xl md:text-3xl font-bold leading-relaxed mb-6 max-w-2xl">
+                        I find fulfillment in blending visual design with the power of coding to create meaningful experiences.
+                    </h2>
+                    
+                    <p className="text-gray-400 text-base md:text-lg mb-10 max-w-3xl">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto maxime tempora at neque a adipisci nulla voluptatem? Molitia, officiis, architecto earum voluptates obcaecati corrupti voluptatem. Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto maxime tempora at neque a adipisci nulla voluptatem? Molitia, officiis, architecto earum voluptates obcaecati corrupti voluptatem.
                     </p>
 
-                    <div className="flex space-x-12 md:space-x-16">
-                        
-                        <div>
-                            <p className="text-5xl md:text-6xl font-extrabold text-primary-orange">3+</p>
-                            <p className="text-sm md:text-base text-gray-400 mt-1">
-                                Years of Experience
-                            </p>
-                        </div>
-
-                        <div>
-                            <p className="text-5xl md:text-6xl font-extrabold text-primary-orange">10+</p>
-                            <p className="text-sm md:text-base text-gray-400 mt-1">
-                                Projects Completed
-                            </p>
-                        </div>
-
-                    </div>
                 </div>
                 
             </div>
@@ -144,7 +123,7 @@ export default function HomePage() {
                     <Link 
                       key={index}
                       href={link.href} 
-                      className={`p-2 rounded-full hover:text-primary-orange transition duration-200 ${index === 0 ? 'sidebar-active' : 'hover:bg-gray-700'}`}
+                      className={`p-2 rounded-full hover:text-primary-orange transition duration-200 ${index === 1 ? 'sidebar-active' : 'hover:bg-gray-700'}`}
                       title={link.title}
                     >
                       <i className={`${link.icon} text-xl`}></i>
@@ -156,3 +135,4 @@ export default function HomePage() {
     </>
   );
 }
+

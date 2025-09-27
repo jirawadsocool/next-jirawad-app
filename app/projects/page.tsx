@@ -1,6 +1,4 @@
 import React from 'react';
-import Image from 'next/image';
-import avatar from '../images/avatar.png';
 import Link from 'next/link';
 
 const navLinks = [
@@ -47,6 +45,11 @@ export default function HomePage() {
                 color: ${PRIMARY_COLOR};
                 background-color: #2a2a2a;
             }
+            /* Custom focus style for inputs */
+            .input-field:focus {
+                outline: none;
+                border-color: ${PRIMARY_COLOR};
+            }
           `}
         </style>
         
@@ -74,11 +77,10 @@ export default function HomePage() {
                     <h2 className="text-3xl font-bold mb-4"><span className="text-primary-orange">J</span>irawad</h2>
                     
                     <div className="mb-6 overflow-hidden rounded-2xl border-4 border-gray-700">
-                        <Image 
-                            src={avatar} 
+                        <img 
+                            src="/avatar.png" 
                             alt="Profile Avatar" 
                             className="w-full h-auto object-cover"
-                            priority
                         />
                     </div>
 
@@ -102,36 +104,38 @@ export default function HomePage() {
 
                 <div className="main-content lg:col-span-2 p-6 md:p-8 rounded-2xl">
                     
-                    <p className="text-lg font-medium mb-4">
-                        Lets Work <span className="text-primary-orange font-bold">Together !</span>
-                    </p>
-
-                    <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-6">
-                        Hi From Thailand<span className="text-primary-orange">Jirawad,</span>
-                        <br />
-                        Interactive Designer & Fullstack Web Developer
+                    <h1 className="text-4xl md:text-5xl font-extrabold leading-tight mb-4">
+                        Featured <span className="text-primary-orange">Projects</span>
                     </h1>
-
-                    <p className="text-gray-400 text-base md:text-lg mb-10 max-w-2xl">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto maxime tempora at neque a adipisci nulla voluptatem? Molitia, officiis, architecto earum voluptates obcaecati corrupti voluptatem.
-                    </p>
-
-                    <div className="flex space-x-12 md:space-x-16">
+                    
+                    <div className="bg-dark-card p-6 md:p-8 rounded-xl shadow-xl border-t-4 border-primary-orange">
                         
-                        <div>
-                            <p className="text-5xl md:text-6xl font-extrabold text-primary-orange">3+</p>
-                            <p className="text-sm md:text-base text-gray-400 mt-1">
-                                Years of Experience
-                            </p>
+                        <h2 className="text-2xl font-semibold mb-2">
+                            Manage Task App - <span className="text-primary-orange">fullstack web development</span>
+                        </h2>
+                        <p className="text-gray-400 text-base mb-6">
+                            Here's my latest project built with Next.js and Laravel, using TailwindCSS on the front-end. Watch the video to see the responsive landing page in action!
+                        </p>
+                        
+                        <div className="relative w-full aspect-video bg-gray-900 rounded-lg overflow-hidden border border-gray-700 mb-6">
+                            <img 
+                                src="https://placehold.co/800x450/374151/ffffff?text=Project+Video+Mockup" 
+                                alt="Project Screenshot Placeholder" 
+                                className="w-full h-full object-cover opacity-50"
+                            />
+                            
+                            <div className="absolute inset-0 flex items-center justify-center">
+                                <button className="w-16 h-16 bg-primary-orange/80 backdrop-blur-sm rounded-full flex items-center justify-center transition duration-300 hover:scale-110 shadow-lg shadow-primary-orange/50">
+                                    <i className="fas fa-play text-white text-2xl"></i>
+                                </button>
+                            </div>
                         </div>
 
-                        <div>
-                            <p className="text-5xl md:text-6xl font-extrabold text-primary-orange">10+</p>
-                            <p className="text-sm md:text-base text-gray-400 mt-1">
-                                Projects Completed
-                            </p>
+                        <div className="flex justify-center space-x-2 mt-4">
+                            <span className="h-2 w-6 bg-primary-orange rounded-full"></span>
+                            <span className="h-2 w-2 bg-gray-700 rounded-full"></span>
+                            <span className="h-2 w-2 bg-gray-700 rounded-full"></span>
                         </div>
-
                     </div>
                 </div>
                 
@@ -144,7 +148,7 @@ export default function HomePage() {
                     <Link 
                       key={index}
                       href={link.href} 
-                      className={`p-2 rounded-full hover:text-primary-orange transition duration-200 ${index === 0 ? 'sidebar-active' : 'hover:bg-gray-700'}`}
+                      className={`p-2 rounded-full hover:text-primary-orange transition duration-200 ${index === 3 ? 'sidebar-active' : 'hover:bg-gray-700'}`}
                       title={link.title}
                     >
                       <i className={`${link.icon} text-xl`}></i>
